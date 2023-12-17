@@ -28,7 +28,6 @@ while True:
         st.session_state["messages"].append({"role": "user", "content": user_message})
         try:
             
-            # client = OpenAI(api_key="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")
             client = OpenAI(api_key=st.secrets["AIOSH1"])
 
             response = client.chat.completions.create(
