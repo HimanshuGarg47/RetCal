@@ -30,7 +30,7 @@ while True:
         if openai_api_key:
             try:
                 
-                client = OpenAI(api_key=AIOSH1)
+                client = OpenAI(api_key=st.secrets["AIOSH1"])
                 response = client.chat.completions.create(
                   model="gpt-3.5-turbo",
                   messages=st.session_state["messages"]
