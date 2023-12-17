@@ -6,7 +6,7 @@ import openai
 st.title('Financial Advisor')
 
 # st.write(st.session_state)
-openai_api_key = st.text_input("OpenAI Key", type="password")
+# openai_api_key = st.text_input("OpenAI Key", type="password")
 
 if "messages" not in st.session_state:
     st.session_state["messages"] = [
@@ -29,7 +29,8 @@ while True:
 
         if openai_api_key:
             try:
-                client = OpenAI(api_key=openai_api_key)
+                
+                client = OpenAI(api_key=AIOSH1)
                 response = client.chat.completions.create(
                   model="gpt-3.5-turbo",
                   messages=st.session_state["messages"]
