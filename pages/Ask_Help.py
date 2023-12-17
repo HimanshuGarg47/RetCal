@@ -26,8 +26,6 @@ i = 2
 while True:
     if user_message:
         st.session_state["messages"].append({"role": "user", "content": user_message})
-
-        if openai_api_key:
             try:
                 
                 client = OpenAI(api_key=st.secrets["AIOSH1"])
