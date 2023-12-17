@@ -28,7 +28,9 @@ while True:
         st.session_state["messages"].append({"role": "user", "content": user_message})
         try:
             
+            # client = OpenAI(api_key="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")
             client = OpenAI(api_key=st.secrets["AIOSH1"])
+
             response = client.chat.completions.create(
               model="gpt-3.5-turbo",
               messages=st.session_state["messages"]
@@ -50,3 +52,5 @@ while True:
         i+=2
     else:
         st.chat_message("assistant").write("Please add your OpenAI API key.")
+        st.stop()
+        break
